@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock On | Iniciar sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <div class="login-box">
+
+            <h1>Stock <span>On</span></h1>
+
+            <div id="loginSection">
+
+                <p class="login-text">
+                    Inicia sesión para acceder a Stock On.
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="loginUsuario">Usuario</label>
+
+                    <input
+                        type="text"
+                        id="loginUsuario"
+                        placeholder="Tu usuario"
+                        required
+                    >
+
+                    <label for="loginPassword">Contraseña</label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Tu contraseña"
+                        required
+                    >
+
+                    <button type="submit" class="btn">
+                        Iniciar sesión
+                    </button>
+
+                    <p id="loginError" class="form-error"></p>
+
+                </form>
+
+                <div class="login-change">
+
+                    <p>¿No tienes una cuenta?</p>
+
+                    <button id="mostrarRegistro" class="link-btn">
+                        Crear una cuenta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="registerSection" class="oculto">
+
+                <p class="login-text">
+                    Crea una cuenta para acceder a Stock On.
+                </p>
+
+                <form id="registerForm">
+
+                    <label for="registroUsuario">Usuario</label>
+
+                    <input
+                        type="text"
+                        id="registroUsuario"
+                        placeholder="Crea tu usuario"
+                        required
+                    >
+
+                    <label for="registroPassword">Contraseña</label>
+
+                    <input
+                        type="password"
+                        id="registroPassword"
+                        placeholder="Crea tu contraseña"
+                        required
+                    >
+
+                    <label for="confirmarPassword">
+                        Confirmar contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarPassword"
+                        placeholder="Repite tu contraseña"
+                        required
+                    >
+
+                    <button type="submit" class="btn">
+                        Crear cuenta
+                    </button>
+
+                    <p id="registroError" class="form-error"></p>
+
+                </form>
+
+                <div class="login-change">
+
+                    <p>¿Ya tienes una cuenta?</p>
+
+                    <button id="mostrarLogin" class="link-btn">
+                        Iniciar sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
