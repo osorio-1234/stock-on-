@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock On | Iniciar sesión</title>
+
+    <meta
+        name="description"
+        content="Inicio de sesión y registro de usuarios de Stock On."
+    >
+
+    <title>Stock On | Cuenta</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,33 +20,44 @@
 
         <div class="login-box">
 
-            <h1>Stock <span>On</span></h1>
+            <a href="index.html" class="login-logo">
+                Stock <span>On</span>
+            </a>
+
 
             <div id="loginSection">
 
                 <p class="login-text">
-                    Inicia sesión para acceder a Stock On.
+                    Inicia sesión para entrar a Stock On.
                 </p>
 
                 <form id="loginForm">
 
-                    <label for="loginUsuario">Usuario</label>
+                    <label for="loginUsuario">
+                        Usuario
+                    </label>
 
                     <input
                         type="text"
                         id="loginUsuario"
                         placeholder="Tu usuario"
+                        autocomplete="username"
                         required
                     >
 
-                    <label for="loginPassword">Contraseña</label>
+
+                    <label for="loginPassword">
+                        Contraseña
+                    </label>
 
                     <input
                         type="password"
                         id="loginPassword"
                         placeholder="Tu contraseña"
+                        autocomplete="current-password"
                         required
                     >
+
 
                     <button type="submit" class="btn">
                         Iniciar sesión
@@ -49,11 +67,18 @@
 
                 </form>
 
+
                 <div class="login-change">
 
-                    <p>¿No tienes una cuenta?</p>
+                    <p>
+                        ¿Todavía no tienes una cuenta?
+                    </p>
 
-                    <button id="mostrarRegistro" class="link-btn">
+                    <button
+                        id="mostrarRegistro"
+                        class="link-btn"
+                        type="button"
+                    >
                         Crear una cuenta
                     </button>
 
@@ -65,28 +90,39 @@
             <div id="registerSection" class="oculto">
 
                 <p class="login-text">
-                    Crea una cuenta para acceder a Stock On.
+                    Crea tu cuenta para comenzar a utilizar Stock On.
                 </p>
 
                 <form id="registerForm">
 
-                    <label for="registroUsuario">Usuario</label>
+                    <label for="registroUsuario">
+                        Usuario
+                    </label>
 
                     <input
                         type="text"
                         id="registroUsuario"
                         placeholder="Crea tu usuario"
+                        autocomplete="username"
+                        minlength="3"
+                        maxlength="50"
                         required
                     >
 
-                    <label for="registroPassword">Contraseña</label>
+
+                    <label for="registroPassword">
+                        Contraseña
+                    </label>
 
                     <input
                         type="password"
                         id="registroPassword"
                         placeholder="Crea tu contraseña"
+                        autocomplete="new-password"
+                        minlength="6"
                         required
                     >
+
 
                     <label for="confirmarPassword">
                         Confirmar contraseña
@@ -96,8 +132,10 @@
                         type="password"
                         id="confirmarPassword"
                         placeholder="Repite tu contraseña"
+                        autocomplete="new-password"
                         required
                     >
+
 
                     <button type="submit" class="btn">
                         Crear cuenta
@@ -107,11 +145,18 @@
 
                 </form>
 
+
                 <div class="login-change">
 
-                    <p>¿Ya tienes una cuenta?</p>
+                    <p>
+                        ¿Ya tienes una cuenta?
+                    </p>
 
-                    <button id="mostrarLogin" class="link-btn">
+                    <button
+                        id="mostrarLogin"
+                        class="link-btn"
+                        type="button"
+                    >
                         Iniciar sesión
                     </button>
 
@@ -122,6 +167,7 @@
         </div>
 
     </main>
+
 
     <script src="script.js"></script>
 

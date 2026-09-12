@@ -3,40 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Conoce los mercados incluidos en la cobertura de Stock On."
+    >
+
     <title>Stock On | Cobertura</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-
         <nav class="navbar">
 
             <a href="index.html" class="logo">
                 Stock <span>On</span>
             </a>
 
-            <button id="menu" class="menu-btn">
-                ☰
-            </button>
+            <div class="nav-actions">
+
+                <button id="temaBtn" class="icon-btn" type="button">
+                    ◐
+                </button>
+
+                <button id="nicoBtn" class="nico-btn" type="button">
+                    Preguntar a Nico
+                </button>
+
+                <button id="menu" class="menu-btn" type="button">
+                    ☰
+                </button>
+
+            </div>
 
             <div id="nav-links" class="nav-links">
 
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="cobertura.html">Cobertura</a>
+                <a href="servicios.html">Catálogo</a>
+                <a class="activo" href="cobertura.html">Cobertura</a>
                 <a href="contacto.html">Contacto</a>
 
-                <button id="cerrarSesion" class="logout-btn">
+                <button id="cerrarSesion" class="logout-btn" type="button">
                     Cerrar sesión
                 </button>
 
             </div>
 
         </nav>
-
     </header>
 
 
@@ -49,109 +66,173 @@
             </p>
 
             <h1>
-                Mercados que hacen parte de Stock On.
+                Los mercados que hacen parte de Stock On.
             </h1>
 
             <p>
-                Nuestra propuesta reúne información de diferentes
-                mercados para facilitar la consulta de productos
-                agrícolas y alimentos.
+                La cobertura define los países cuyos productos forman
+                parte del catálogo actual de la plataforma.
             </p>
+
+        </section>
+
+
+        <section class="coverage-main">
+
+            <div class="coverage-explanation">
+
+                <p class="small-title">
+                    Presente
+                </p>
+
+                <h2>
+                    Una cobertura inicial pensada para crecer.
+                </h2>
+
+                <p>
+                    Stock On comienza con cuatro mercados disponibles.
+                    Cada uno cuenta con productos registrados en la
+                    base de datos y puede consultarse desde el catálogo.
+                </p>
+
+                <p>
+                    La cobertura no pretende representar toda la
+                    producción de un país. Su función dentro del
+                    proyecto es organizar una muestra de productos
+                    para facilitar la consulta y demostrar cómo la
+                    plataforma puede ampliarse.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-summary">
+
+                <strong>04</strong>
+
+                <span>
+                    mercados activos
+                </span>
+
+            </div>
 
         </section>
 
 
         <section class="coverage">
 
-            <div class="coverage-card">
+            <article class="coverage-card">
 
                 <span class="flag">🇨🇴</span>
+
+                <p class="card-label">
+                    Mercado 01
+                </p>
 
                 <h2>Colombia</h2>
 
                 <p>
-                    Es el mercado principal de nuestra propuesta.
-                    Incluye productos agrícolas provenientes de
-                    diferentes regiones del país.
+                    Es el mercado principal de la propuesta.
+                    Cuenta con productos agrícolas como café,
+                    banano, aguacate, mango, papa y tomate.
                 </p>
 
                 <span class="status">
                     Disponible
                 </span>
 
-            </div>
+            </article>
 
 
-            <div class="coverage-card">
+            <article class="coverage-card">
 
                 <span class="flag">🇦🇷</span>
+
+                <p class="card-label">
+                    Mercado 02
+                </p>
 
                 <h2>Argentina</h2>
 
                 <p>
-                    Incluimos productos agrícolas y frutas que
-                    representan parte de la producción de este mercado.
+                    Incluye productos frutícolas y agrícolas como
+                    manzana, pera, uva, limón y otros productos
+                    representativos.
                 </p>
 
                 <span class="status">
                     Disponible
                 </span>
 
-            </div>
+            </article>
 
 
-            <div class="coverage-card">
+            <article class="coverage-card">
 
                 <span class="flag">🇧🇷</span>
+
+                <p class="card-label">
+                    Mercado 03
+                </p>
 
                 <h2>Brasil</h2>
 
                 <p>
-                    Un mercado importante por su variedad de productos
-                    tropicales y agrícolas.
+                    Su presencia permite incluir productos tropicales
+                    y agrícolas dentro del catálogo inicial.
                 </p>
 
                 <span class="status">
                     Disponible
                 </span>
 
-            </div>
+            </article>
 
 
-            <div class="coverage-card">
+            <article class="coverage-card">
 
                 <span class="flag">🇨🇦</span>
+
+                <p class="card-label">
+                    Mercado 04
+                </p>
 
                 <h2>Canadá</h2>
 
                 <p>
-                    Incluimos productos agrícolas y alimentos
-                    representativos de diferentes zonas del país.
+                    Incorpora productos asociados a diferentes
+                    sistemas agrícolas y condiciones de clima frío.
                 </p>
 
                 <span class="status">
                     Disponible
                 </span>
 
-            </div>
+            </article>
 
 
-            <div class="coverage-card coming-soon">
+            <article class="coverage-card coming-soon">
 
                 <span class="flag">🇨🇳</span>
+
+                <p class="card-label">
+                    Próxima incorporación
+                </p>
 
                 <h2>China</h2>
 
                 <p>
-                    Estamos preparando la incorporación de este
-                    mercado para ampliar nuestra cobertura.
+                    Este mercado queda preparado como una futura
+                    ampliación de la plataforma. Su incorporación
+                    permitirá demostrar cómo la base de datos puede
+                    crecer sin reconstruir el sitio.
                 </p>
 
                 <span class="status future">
                     Próximamente
                 </span>
 
-            </div>
+            </article>
 
         </section>
 

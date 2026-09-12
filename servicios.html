@@ -3,40 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock On | Servicios</title>
+
+    <meta
+        name="description"
+        content="Explora el catálogo de productos agrícolas de Stock On."
+    >
+
+    <title>Stock On | Catálogo</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-
         <nav class="navbar">
 
             <a href="index.html" class="logo">
                 Stock <span>On</span>
             </a>
 
-            <button id="menu" class="menu-btn">
-                ☰
-            </button>
+            <div class="nav-actions">
+
+                <button
+                    id="temaBtn"
+                    class="icon-btn"
+                    type="button"
+                >
+                    ◐
+                </button>
+
+                <button
+                    id="nicoBtn"
+                    class="nico-btn"
+                    type="button"
+                >
+                    Preguntar a Nico
+                </button>
+
+                <button
+                    id="menu"
+                    class="menu-btn"
+                    type="button"
+                >
+                    ☰
+                </button>
+
+            </div>
 
             <div id="nav-links" class="nav-links">
 
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
+                <a class="activo" href="servicios.html">Catálogo</a>
                 <a href="cobertura.html">Cobertura</a>
                 <a href="contacto.html">Contacto</a>
 
-                <button id="cerrarSesion" class="logout-btn">
+                <button id="cerrarSesion" class="logout-btn" type="button">
                     Cerrar sesión
                 </button>
 
             </div>
 
         </nav>
-
     </header>
 
 
@@ -49,13 +78,13 @@
             </p>
 
             <h1>
-                Productos de nuestros mercados.
+                Explora los productos de Stock On.
             </h1>
 
             <p>
-                Presentamos algunos productos agrícolas y alimentos
-                representativos de los países que hacen parte de
-                nuestra cobertura.
+                Consulta productos por nombre, país o categoría.
+                Si tienes una cuenta puedes guardar los productos
+                que quieras revisar posteriormente.
             </p>
 
         </section>
@@ -63,100 +92,164 @@
 
         <section class="catalogo">
 
-            <div class="country-section">
+            <div class="catalogo-intro">
 
-                <div class="country-title">
+                <div>
 
-                    <span>🇨🇴</span>
-                    <h2>Colombia</h2>
+                    <p class="small-title">
+                        Consulta
+                    </p>
 
-                </div>
+                    <h2>
+                        Encuentra lo que buscas.
+                    </h2>
 
-                <div class="product-list">
-
-                    <div>Banano</div>
-                    <div>Aguacate</div>
-                    <div>Mango</div>
-                    <div>Café</div>
-                    <div>Papa</div>
-                    <div>Tomate</div>
-
-                </div>
-
-            </div>
-
-
-            <div class="country-section">
-
-                <div class="country-title">
-
-                    <span>🇦🇷</span>
-                    <h2>Argentina</h2>
+                    <p>
+                        El catálogo se obtiene directamente desde la
+                        base de datos. Esto permite que la información
+                        pueda crecer sin tener que modificar manualmente
+                        cada página HTML.
+                    </p>
 
                 </div>
 
-                <div class="product-list">
+                <div class="catalogo-count">
 
-                    <div>Manzana</div>
-                    <div>Pera</div>
-                    <div>Uva</div>
-                    <div>Limón</div>
-                    <div>Papa</div>
-                    <div>Cebolla</div>
+                    <strong id="resultadoCatalogo">
+                        Cargando...
+                    </strong>
+
+                    <span>
+                        productos disponibles
+                    </span>
 
                 </div>
 
             </div>
 
 
-            <div class="country-section">
+            <div class="catalogo-controls">
 
-                <div class="country-title">
+                <div class="search-control">
 
-                    <span>🇧🇷</span>
-                    <h2>Brasil</h2>
+                    <label for="buscadorProducto">
+                        Buscar producto
+                    </label>
+
+                    <input
+                        id="buscadorProducto"
+                        type="search"
+                        placeholder="Ejemplo: café"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="select-control">
+
+                    <label for="filtroPais">
+                        País
+                    </label>
+
+                    <select id="filtroPais">
+
+                        <option value="">
+                            Todos los países
+                        </option>
+
+                        <option value="Colombia">
+                            Colombia
+                        </option>
+
+                        <option value="Argentina">
+                            Argentina
+                        </option>
+
+                        <option value="Brasil">
+                            Brasil
+                        </option>
+
+                        <option value="Canadá">
+                            Canadá
+                        </option>
+
+                    </select>
 
                 </div>
 
-                <div class="product-list">
 
-                    <div>Naranja</div>
-                    <div>Papaya</div>
-                    <div>Mango</div>
-                    <div>Piña</div>
-                    <div>Coco</div>
-                    <div>Yuca</div>
+                <label class="favorite-filter">
 
-                </div>
+                    <input
+                        id="soloFavoritos"
+                        type="checkbox"
+                    >
+
+                    <span>
+                        Solo favoritos
+                    </span>
+
+                </label>
 
             </div>
 
 
-            <div class="country-section">
-
-                <div class="country-title">
-
-                    <span>🇨🇦</span>
-                    <h2>Canadá</h2>
-
+            <div
+                id="productList"
+                class="product-list"
+            >
+                <div class="loading-state">
+                    Cargando productos...
                 </div>
-
-                <div class="product-list">
-
-                    <div>Manzana</div>
-                    <div>Arándanos</div>
-                    <div>Fresa</div>
-                    <div>Papa</div>
-                    <div>Zanahoria</div>
-                    <div>Cebolla</div>
-
-                </div>
-
             </div>
 
         </section>
 
     </main>
+
+
+    <div id="nicoModal" class="modal oculto">
+
+        <div class="modal-box">
+
+            <button id="cerrarNico" class="modal-close" type="button">
+                ×
+            </button>
+
+            <p class="small-title">
+                Asistente
+            </p>
+
+            <h2>
+                Pregúntale a Nico
+            </h2>
+
+            <div id="nicoRespuesta" class="nico-response">
+                Hola. Soy Nico. Pregúntame algo sobre Stock On.
+            </div>
+
+            <form id="nicoForm" class="nico-form">
+
+                <input
+                    id="nicoPregunta"
+                    type="text"
+                    placeholder="Escribe tu pregunta..."
+                    required
+                >
+
+                <button class="btn" type="submit">
+                    Preguntar
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <div id="mensajeGlobal" class="mensaje-global oculto"></div>
 
 
     <footer>

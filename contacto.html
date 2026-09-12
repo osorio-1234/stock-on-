@@ -3,40 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Página de contacto de Stock On."
+    >
+
     <title>Stock On | Contacto</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-
         <nav class="navbar">
 
             <a href="index.html" class="logo">
                 Stock <span>On</span>
             </a>
 
-            <button id="menu" class="menu-btn">
-                ☰
-            </button>
+            <div class="nav-actions">
+
+                <button id="temaBtn" class="icon-btn" type="button">
+                    ◐
+                </button>
+
+                <button id="nicoBtn" class="nico-btn" type="button">
+                    Preguntar a Nico
+                </button>
+
+                <button id="menu" class="menu-btn" type="button">
+                    ☰
+                </button>
+
+            </div>
 
             <div id="nav-links" class="nav-links">
 
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
+                <a href="servicios.html">Catálogo</a>
                 <a href="cobertura.html">Cobertura</a>
-                <a href="contacto.html">Contacto</a>
+                <a class="activo" href="contacto.html">Contacto</a>
 
-                <button id="cerrarSesion" class="logout-btn">
+                <button id="cerrarSesion" class="logout-btn" type="button">
                     Cerrar sesión
                 </button>
 
             </div>
 
         </nav>
-
     </header>
 
 
@@ -49,12 +66,12 @@
             </p>
 
             <h1>
-                Hablemos.
+                Hablemos sobre Stock On.
             </h1>
 
             <p>
-                Si quieres conocer más sobre Stock On o tienes alguna
-                pregunta, puedes comunicarte con nosotros.
+                Si tienes una pregunta, una sugerencia o encontraste
+                algún problema, puedes utilizar este formulario.
             </p>
 
         </section>
@@ -64,11 +81,24 @@
 
             <div class="contact-info">
 
-                <h2>Encuéntranos</h2>
+                <p class="small-title">
+                    Comunicación
+                </p>
+
+                <h2>
+                    Tu opinión también hace parte del proyecto.
+                </h2>
 
                 <p>
-                    También puedes conocer nuestro trabajo y
-                    comunicarte con nosotros a través de nuestras redes.
+                    Una plataforma puede mejorar mucho cuando las
+                    personas que la utilizan pueden señalar qué funciona,
+                    qué resulta confuso o qué les gustaría encontrar.
+                </p>
+
+                <p>
+                    Si estás probando Stock On, puedes utilizar el
+                    formulario para dejar un mensaje o comunicar un
+                    error que hayas encontrado.
                 </p>
 
 
@@ -79,22 +109,17 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-
                         <span>GitHub</span>
                         <small>@osorio-1234</small>
-
                     </a>
-
 
                     <a
                         href="https://www.instagram.com/nigga_osorio/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-
                         <span>Instagram</span>
                         <small>@nigga_osorio</small>
-
                     </a>
 
                 </div>
@@ -112,6 +137,8 @@
                     type="text"
                     id="nombre"
                     placeholder="Tu nombre"
+                    maxlength="80"
+                    required
                 >
 
                 <p id="errorNombre" class="form-error"></p>
@@ -125,6 +152,8 @@
                     type="email"
                     id="correo"
                     placeholder="tu@correo.com"
+                    maxlength="120"
+                    required
                 >
 
                 <p id="errorCorreo" class="form-error"></p>
@@ -136,15 +165,17 @@
 
                 <textarea
                     id="mensaje"
-                    rows="6"
+                    rows="7"
+                    maxlength="1000"
                     placeholder="Escribe tu mensaje"
+                    required
                 ></textarea>
 
                 <p id="errorMensaje" class="form-error"></p>
 
 
                 <button type="submit" class="btn">
-                    Enviar mensaje
+                    Revisar mensaje
                 </button>
 
                 <p id="resultado" class="resultado"></p>
