@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explora el catálogo de productos agrícolas de Stock On."
+    >
+
+    <title>Stock On | Catálogo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="layout-header"></div>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <p class="small-title">
+                Catálogo
+            </p>
+
+            <h1>
+                Explora los productos de Stock On.
+            </h1>
+
+            <p>
+                Consulta productos por nombre, país o categoría.
+                Si tienes una cuenta puedes guardar los productos
+                que quieras revisar posteriormente.
+            </p>
+
+        </section>
+
+
+        <section class="catalogo">
+
+            <div class="catalogo-intro">
+
+                <div>
+
+                    <p class="small-title">
+                        Consulta
+                    </p>
+
+                    <h2>
+                        Encuentra lo que buscas.
+                    </h2>
+
+                    <p>
+                        El catálogo se obtiene directamente desde la
+                        base de datos. Esto permite que la información
+                        pueda crecer sin tener que modificar manualmente
+                        cada página HTML.
+                    </p>
+
+                </div>
+
+                <div class="catalogo-count">
+
+                    <strong id="resultadoCatalogo">
+                        Cargando...
+                    </strong>
+
+                    <span>
+                        productos disponibles
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="catalogo-controls">
+
+                <div class="search-control">
+
+                    <label for="buscadorProducto">
+                        Buscar producto
+                    </label>
+
+                    <input
+                        id="buscadorProducto"
+                        type="search"
+                        placeholder="Ejemplo: café"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="select-control">
+
+                    <label for="filtroPais">
+                        País
+                    </label>
+
+                    <select id="filtroPais">
+
+                        <option value="">
+                            Todos los países
+                        </option>
+
+                        <option value="Colombia">
+                            Colombia
+                        </option>
+
+                        <option value="Argentina">
+                            Argentina
+                        </option>
+
+                        <option value="Brasil">
+                            Brasil
+                        </option>
+
+                        <option value="Canadá">
+                            Canadá
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <label class="favorite-filter">
+
+                    <input
+                        id="soloFavoritos"
+                        type="checkbox"
+                    >
+
+                    <span>
+                        Solo favoritos
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="productList"
+                class="product-list"
+            >
+                <div class="loading-state">
+                    Cargando productos...
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="layout-nico"></div>
+
+
+    <div id="layout-footer"></div>
+
+
+    <script src="js/layout.js"></script>
+
+
+    <script src="js/api.js"></script>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
