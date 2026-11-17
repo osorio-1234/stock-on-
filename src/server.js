@@ -1,0 +1,15 @@
+require('dotenv').config();
+const express=require('express'); const mongoose=require('mongoose'); const cors=require('cors'); const helmet=require('helmet'); const rateLimit=require('express-rate-limit');
+const authRoutes=require('./routes/auth'); const productRoutes=require('./routes/products'); const nicoRoutes=require('./routes/nico'); const contactRoutes=require('./routes/contact'); const adminRoutes=require('./routes/admin');
+const app=express();
+app.use(helmet({crossOriginResourcePolicy:{policy:'cross-origin'}}));
+const origins=(process.env.FRONTEND_URL||'http://127.0.0.1:5500').split(',').map(x=>x.trim());
+app.use(cors({origin:(origin,cb)=>!origin||origins.includes(origin)?cb(null,true):cb(new Error('Origen no permitido por CORS.')),credentials:false}));
+app.use(express.json({limit:'30kb'}));
+app.use('/api',rateLimit({windowMs:15*60*1000,limit:250,standardHeaders:true,legacyHeaders:false}));
+app.get('/api/health',(req,res)=>res.json({ok:true,mensaje:'Stock On API disponible'}));
+app.use('/api',authRoutes,productRoutes,nicoRoutes,contactRoutes,adminRoutes);
+app.use((req,res)=>res.status(404).json({message:'Ups, ruta no encontrada.'}));
+app.use((err,req,res,next)=>{console.error(err);if(err.code===11000)return res.status(409).json({message:'Ese registro ya existe.'});if(err.name==='ValidationError')return res.status(400).json({message:'Revisa los datos enviados.'});res.status(500).json({message:process.env.NODE_ENV==='production'?'Error interno del servidor.':err.message});});
+const port=process.env.PORT||3000;
+mongoose.connect(process.env.MONGODB_URI).then(()=>{console.log('MongoDB conectado');app.listen(port,()=>console.log(`Stock On API en http://localhost:${port}`));}).catch(err=>{console.error('No se pudo conectar con MongoDB:',err.message);process.exit(1);});
